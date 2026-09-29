@@ -19,3 +19,15 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.16.9",
 ]
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+# E/F = pycodestyle/pyflakes, I = import sorting, UP = modern syntax, B = bugbear, SIM = simplify
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
