@@ -1,0 +1,21 @@
+[project]
+name = "newswatch"
+version = "0.1.0"
+description = "Continuous topic-monitoring agent: RSS -> events -> triage -> cited daily brief"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+newswatch = "newswatch:main"
+
+[build-system]
+requires = ["uv_build>=0.11.28,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Secrets
+.env
+
+# Claude Code: personal files only
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Private design docs
+docs/*.pdf
+
+# Large or regenerable data
+data/raw/
+data/replay/
+logs/
+.cache/
+models/**/*.joblib
+
+# Notebooks, editors, OS
+.ipynb_checkpoints/
+.vscode/
+.DS_Store
