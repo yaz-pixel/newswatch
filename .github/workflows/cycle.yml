@@ -1,0 +1,46 @@
+name: cycle
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"   # every 4 hours, in UTC (GitHub cron is always UTC)
+  workflow_dispatch: {}      # lets you run it by hand from the Actions tab
+
+concurrency:
+  group: cycle
+  cancel-in-progress: false  # never run two collections at the same time
+
+permissions:
+  contents: read
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}   # set in repo Settings -> Secrets -> Actions
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --frozen --no-dev
+      - name: Apply migrations
+        run: uv run python -m newswatch.main migrate
+      - name: Collect
+        run: uv run python -m newswatch.main collect
+
+      # The first run after 00:00 UTC also writes yesterday's snapshot (data/raw/YYYY-MM-DD.jsonl).
+      # Runs are 4 h apart, so exactly one run per day has hour < 4, even if GitHub starts it late.
+      - name: Is this the first run of the day?
+        id: daily
+        run: echo "first=$([ "$(date -u +%H)" -lt 4 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+      - name: Snapshot yesterday
+        if: steps.daily.outputs.first == 'true'
+        run: uv run python -m newswatch.main snapshot
+      - name: Upload snapshot
+        if: steps.daily.outputs.first == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-snapshot-${{ github.run_id }}
+          path: data/raw/*.jsonl
+          retention-days: 90

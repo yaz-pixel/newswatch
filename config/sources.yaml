@@ -1,0 +1,271 @@
+# Source registry. rss_url is what the collector reads; the rest drives independence checks in P6.
+# owner_group / state_affiliated / reliability_tier are FIRST-PASS guesses: review them in P1.
+# Ran `make check-feeds` to see which URLs are alive, then pruned dead ones.
+sources:
+  - source_id: bbc_world
+    name: "BBC News - World"
+    rss_url: "https://feeds.bbci.co.uk/news/world/rss.xml"
+    region: "UK"
+    owner_group: "BBC"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: bbc_middle_east
+    name: "BBC News - Middle East"
+    rss_url: "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml"
+    region: "Middle East"
+    owner_group: "BBC"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: guardian_world
+    name: "The Guardian - World"
+    rss_url: "https://www.theguardian.com/world/rss"
+    region: "UK"
+    owner_group: "Guardian Media Group"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: guardian_middle_east
+    name: "The Guardian - Middle East"
+    rss_url: "https://www.theguardian.com/world/middleeast/rss"
+    region: "Middle East"
+    owner_group: "Guardian Media Group"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: nyt_world
+    name: "New York Times - World"
+    rss_url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+    region: "US"
+    owner_group: "New York Times Co"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: nyt_middle_east
+    name: "New York Times - Middle East"
+    rss_url: "https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml"
+    region: "US"
+    owner_group: "New York Times Co"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: wapo_world
+    name: "Washington Post - World"
+    rss_url: "https://feeds.washingtonpost.com/rss/world"
+    region: "US"
+    owner_group: "Nash Holdings"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: npr_world
+    name: "NPR - World"
+    rss_url: "https://feeds.npr.org/1004/rss.xml"
+    region: "US"
+    owner_group: "NPR"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: cnn_world
+    name: "CNN - World"
+    rss_url: "http://rss.cnn.com/rss/edition_world.rss"
+    region: "US"
+    owner_group: "Warner Bros. Discovery"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: cbs_world
+    name: "CBS News - World"
+    rss_url: "https://www.cbsnews.com/latest/rss/world"
+    region: "US"
+    owner_group: "Paramount"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: abc_us_world
+    name: "ABC News (US) - International"
+    rss_url: "https://abcnews.go.com/abcnews/internationalheadlines"
+    region: "US"
+    owner_group: "Disney"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: fox_world
+    name: "Fox News - World"
+    rss_url: "https://moxie.foxnews.com/google-publisher/world.xml"
+    region: "US"
+    owner_group: "Fox Corporation"
+    state_affiliated: false
+    reliability_tier: 3
+  - source_id: sky_world
+    name: "Sky News - World"
+    rss_url: "https://feeds.skynews.com/feeds/rss/world.xml"
+    region: "UK"
+    owner_group: "Comcast"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: independent_world
+    name: "The Independent - World"
+    rss_url: "https://www.independent.co.uk/news/world/rss"
+    region: "UK"
+    owner_group: "Independent"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: dw_all
+    name: "Deutsche Welle - English"
+    rss_url: "https://rss.dw.com/rdf/rss-en-all"
+    region: "Europe"
+    owner_group: "Deutsche Welle"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: france24_all
+    name: "France 24 - English"
+    rss_url: "https://www.france24.com/en/rss"
+    region: "Europe"
+    owner_group: "France Medias Monde"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: france24_middle_east
+    name: "France 24 - Middle East"
+    rss_url: "https://www.france24.com/en/middle-east/rss"
+    region: "Middle East"
+    owner_group: "France Medias Monde"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: euronews
+    name: "Euronews"
+    rss_url: "https://www.euronews.com/rss?level=theme&name=news"
+    region: "Europe"
+    owner_group: "Euronews"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: aljazeera_all
+    name: "Al Jazeera English"
+    rss_url: "https://www.aljazeera.com/xml/rss/all.xml"
+    region: "Middle East"
+    owner_group: "Al Jazeera Media Network"
+    state_affiliated: true
+    reliability_tier: 2
+  - source_id: arab_news
+    enabled: false
+    name: "Arab News"
+    rss_url: "https://www.arabnews.com/rss.xml"
+    region: "Middle East"
+    owner_group: "Saudi Research and Media Group"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: al_monitor
+    name: "Al-Monitor"
+    rss_url: "https://www.al-monitor.com/rss"
+    region: "Middle East"
+    owner_group: "Al-Monitor"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: middle_east_eye
+    name: "Middle East Eye"
+    rss_url: "https://www.middleeasteye.net/rss"
+    region: "Middle East"
+    owner_group: "Middle East Eye"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: middle_east_monitor
+    name: "Middle East Monitor"
+    rss_url: "https://www.middleeastmonitor.com/feed/"
+    region: "Middle East"
+    owner_group: "Middle East Monitor"
+    state_affiliated: false
+    reliability_tier: 3
+  - source_id: times_of_israel
+    name: "The Times of Israel"
+    rss_url: "https://www.timesofisrael.com/feed/"
+    region: "Middle East"
+    owner_group: "Times of Israel"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: jerusalem_post
+    name: "The Jerusalem Post"
+    rss_url: "https://www.jpost.com/rss/rssfeedsfrontpage.aspx"
+    region: "Middle East"
+    owner_group: "Jerusalem Post Group"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: ynetnews
+    enabled: false
+    name: "Ynetnews"
+    rss_url: "https://www.ynetnews.com/Integration/StoryRss3254.xml"
+    region: "Middle East"
+    owner_group: "Yedioth Ahronoth Group"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: tehran_times
+    name: "Tehran Times"
+    rss_url: "https://www.tehrantimes.com/rss"
+    region: "Middle East"
+    owner_group: "Islamic Culture and Communication Organization"
+    state_affiliated: true
+    reliability_tier: 3
+  - source_id: press_tv
+    enabled: false
+    name: "Press TV"
+    rss_url: "https://www.presstv.ir/rss.xml"
+    region: "Middle East"
+    owner_group: "IRIB"
+    state_affiliated: true
+    reliability_tier: 3
+  - source_id: anadolu
+    name: "Anadolu Agency - World"
+    rss_url: "https://www.aa.com.tr/en/rss/default?cat=world"
+    region: "Middle East"
+    owner_group: "Anadolu Agency"
+    state_affiliated: true
+    reliability_tier: 3
+  - source_id: trt_world
+    enabled: false
+    name: "TRT World"
+    rss_url: "https://www.trtworld.com/rss"
+    region: "Middle East"
+    owner_group: "TRT"
+    state_affiliated: true
+    reliability_tier: 3
+  - source_id: hurriyet_daily_news
+    enabled: false
+    name: "Hurriyet Daily News"
+    rss_url: "https://www.hurriyetdailynews.com/rss"
+    region: "Middle East"
+    owner_group: "Demiroren Group"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: egypt_independent
+    enabled: false
+    name: "Egypt Independent"
+    rss_url: "https://egyptindependent.com/feed/"
+    region: "Middle East"
+    owner_group: "Al-Masry Media Corp"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: un_news_middle_east
+    enabled: false
+    name: "UN News - Middle East"
+    rss_url: "https://news.un.org/feed/subscribe/en/news/region/middle-east/feed/rss.xml"
+    region: "Global"
+    owner_group: "United Nations"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: tass
+    name: "TASS"
+    rss_url: "https://tass.com/rss/v2.xml"
+    region: "Russia"
+    owner_group: "TASS"
+    state_affiliated: true
+    reliability_tier: 3
+  - source_id: abc_au_world
+    enabled: false
+    name: "ABC Australia - World"
+    rss_url: "https://www.abc.net.au/news/feed/52278/rss.xml"
+    region: "Asia-Pacific"
+    owner_group: "ABC Australia"
+    state_affiliated: false
+    reliability_tier: 1
+  - source_id: the_hindu_world
+    name: "The Hindu - International"
+    rss_url: "https://www.thehindu.com/news/international/feeder/default.rss"
+    region: "South Asia"
+    owner_group: "Kasturi & Sons"
+    state_affiliated: false
+    reliability_tier: 2
+  - source_id: straits_times_world
+    name: "The Straits Times - World"
+    rss_url: "https://www.straitstimes.com/news/world/rss.xml"
+    region: "Asia-Pacific"
+    owner_group: "SPH Media"
+    state_affiliated: false
+    reliability_tier: 2

@@ -1,0 +1,9 @@
+# Collector settings. Secrets (DATABASE_URL) come from environment variables, never from here.
+log_level: INFO
+collector:
+  user_agent: "newswatch/0.1 (research project; contact via GitHub)"
+  timeout_seconds: 15
+  max_workers: 8
+  lede_max_chars: 500
+  lookback_hours: 12        # cadence is 4 h; the extra overlap covers late or skipped cron runs
+  max_future_skew_hours: 1

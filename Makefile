@@ -1,4 +1,6 @@
-.PHONY: setup lint format test
+.PHONY: setup lint format test migrate collect snapshot check-feeds
+
+RUN = uv run --env-file .env python -m newswatch.main
 
 setup:
 	uv sync
@@ -14,3 +16,15 @@ format:
 
 test:
 	uv run pytest
+
+migrate:
+	$(RUN) migrate
+
+collect:
+	$(RUN) collect
+
+snapshot:
+	$(RUN) snapshot
+
+check-feeds:
+	$(RUN) check-feeds

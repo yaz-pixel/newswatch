@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Sample News</title>
+    <language>en</language>
+    <item>
+      <title>Talks resume in capital</title>
+      <link>https://www.example.com/world/talks/?utm_source=rss&amp;id=7</link>
+      <description>&lt;p&gt;Delegations met on &lt;b&gt;Monday&lt;/b&gt; &amp;amp; agreed to continue.&lt;/p&gt;</description>
+      <pubDate>Mon, 16 Nov 2026 06:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Item without a date</title>
+      <link>https://example.com/world/no-date</link>
+      <description>No pubDate here.</description>
+    </item>
+    <item>
+      <title>Item without a link</title>
+      <description>Should be skipped.</description>
+    </item>
+  </channel>
+</rss>
